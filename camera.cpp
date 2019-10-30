@@ -58,6 +58,7 @@ void Camera::common_motion(int x, int y)
     distance += float (origin_mouse.y - y) * 0.2;
     distance = distance < 1. ? 1. : distance > 20. ? 20. : distance;
   }
+  
 
   origin_mouse = glm::vec2(x, y);
 }

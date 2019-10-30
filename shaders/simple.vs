@@ -18,7 +18,7 @@ float rand(vec2 co)
 
 void main()
 {
-  gl_Position = MVP*vec4(position, 1.0) + 2 * rand(uv);
+  gl_Position = MVP*vec4(position, 1.0);
   pos = position;
   uv = texcoord;
   n = normal;

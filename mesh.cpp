@@ -170,3 +170,34 @@ void Mesh::apply_matrix(const glm::mat4& m)
     vertices[i+5] = n.z;
   }
 }
+
+  std::vector<GLfloat> Mesh::position() const { 
+    std::vector<GLfloat> v;
+      for(int i= 0; i+7 < vertices.size(); i+=8)
+      {
+        v.push_back(vertices[i]);
+        v.push_back(vertices[i+1]);
+        v.push_back(vertices[i+2]);
+      }
+    return v;
+  }   
+std::vector<GLfloat> Mesh::normal() const { 
+  std::vector<GLfloat> v;
+  for(int i= 0; i+7 < vertices.size(); i+=8)
+  {
+    v.push_back(vertices[i+3]);
+    v.push_back(vertices[i+4]);
+    v.push_back(vertices[i+5]);
+  }
+  return v;
+}
+std::vector<GLfloat> Mesh::texcoord() const { 
+  std::vector<GLfloat> v;
+  for(int i= 0; i+7 < vertices.size(); i+=8)
+  {
+    v.push_back(vertices[i+6]);
+    v.push_back(vertices[i+7]);
+  }
+  return v;
+}
+

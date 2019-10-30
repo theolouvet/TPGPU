@@ -40,6 +40,10 @@ class Mesh
     const std::vector<GLfloat>& vert(){return vertices;};
     const std::vector<GLuint>& idx(){return indices;};
 
+     std::vector<GLfloat> position() const; 
+    std::vector<GLfloat> normal() const; 
+    std::vector<GLfloat> texcoord() const; 
+
     /***************************************************/
     //         Modification  mesh 
     /***************************************************/
